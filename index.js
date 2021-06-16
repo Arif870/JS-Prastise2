@@ -169,3 +169,28 @@ exam
     .catch((rej) => {
         console.log(rej);
     });
+
+
+// foreach implementation
+
+let arr = [1, 2, 3, 4, 5];
+sum = 0;
+arr.forEach(function(value, index, arr) {
+    sum += value;
+});
+
+console.log(sum);
+
+// map function
+
+let arrsqr = arr.map(function(value) {
+    return value * value;
+});
+console.log(arr);
+console.log(arrsqr);
+
+let eevenarr = arr.filter(function(value) {
+    return value % 2 === 0;
+});
+
+console.log(eevenarr);
