@@ -152,3 +152,20 @@ function sqr(n) {
 }
 
 console.log(sqr(2));
+
+let mark = 30;
+let exam = new Promise((resolve, reject) => {
+    if (mark >= 33) {
+        resolve("Passed");
+    } else {
+        reject("Failed");
+    }
+});
+
+exam
+    .then((res) => {
+        console.log(res);
+    })
+    .catch((rej) => {
+        console.log(rej);
+    });
