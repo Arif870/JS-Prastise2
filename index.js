@@ -194,3 +194,46 @@ let eevenarr = arr.filter(function(value) {
 });
 
 console.log(eevenarr);
+
+// factory pattern
+
+let createRect = function(height, width) {
+    return {
+        height: height,
+        width: width,
+        draw: function() {
+            console.log(`Area is ${height * width}`);
+            this.consolePropertise();
+        },
+
+        consolePropertise: function() {
+            console.log("my width is " + this.width);
+            console.log(`My height is ${this.height}`);
+        },
+    };
+};
+
+let rect1 = createRect(10, 40);
+rect1.draw();
+let rect2 = createRect(100, 50);
+rect2.draw();
+
+// constructor pattern
+
+let ConsPattern = function() {
+    this.width = 100;
+    this.height = 100;
+
+    this.area = function() {
+        console.log("Area is " + this.width * this.height);
+        this.des();
+    };
+
+    this.des = function() {
+        console.log(`My height is ${this.height}`);
+        console.log(`My width is ${this.width}`);
+    };
+};
+
+let rec = new ConsPattern();
+rec.area();
